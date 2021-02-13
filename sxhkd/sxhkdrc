@@ -1,0 +1,21 @@
+# terminal emulator
+super + Return
+	qterminal
+
+# program launcher
+super + @space
+	rofi -show run
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# audio
+XF86AudioMute
+	amixer -q -D pulse sset Master toggle
+XF86Audio{Raise,Lower}Volume
+	amixer -q -D pulse sset Master {5%+,5%-}
+
+# backlight Control
+XF86KbdBrightness{Up,Down}
+	xbacklight {+,-}10%
